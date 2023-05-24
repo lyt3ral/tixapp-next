@@ -16,7 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-darkmode text-brightmode">
+    <html lang="en" className="bg-background text-brightmode">
+      <head>
+        <link rel="icon" href="/static/images/logo.ico" />
+        <title>TixApp</title>
+      </head>
       <Navbar />
       <div className="p-5">{children}</div>
     </html>
