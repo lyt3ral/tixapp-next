@@ -1,22 +1,24 @@
-import { Logo } from "../components/Logo";
-import { SearchBar } from "./SearchBar";
+import Logo from "../components/Logo";
+import SearchBar from "./SearchBar";
 import { Switch } from "../components/ui/Switch";
 
-export const Navbar = () => {
+export default function Navbar() {
   return (
     <>
-      <div className="flex w-full bg-primary text-primary-foreground flex-row items-center justify-between px-7 p-3">
+      <div className="flex w-full bg-secondary text-secondary-foreground flex-row items-center justify-between px-7 p-3">
         <Logo />
         <SearchBar />
-        <Switch />
-      </div>
-      <div className="flex flex-row w-full bg-secondary text-secondary-foreground items-center justify-center p-2 space-x-40 text-white">
-        <p>Home</p>
-        <p>Movies</p>
-        <p>Bookings</p>
+
+        <div className="flex flex-row space-x-3 text-secondary-foreground-muted">
+          <p>Home</p>
+          <p>Profile</p>
+          <p>Movies</p>
+          <p>Bookings</p>
+          <Switch />
+        </div>
       </div>
     </>
   );
-};
+}
 
 //bg-[#5C357C]
