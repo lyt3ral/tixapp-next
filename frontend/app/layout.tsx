@@ -1,14 +1,5 @@
 import "../styles/globals.css";
-import Navbar from "../components/Navbar";
-import { Fragment } from "react";
-// import { Inter } from "next/font/google";
-
-// const inter = Inter({ subsets: ["latin"] });
-
-// export const metadata = {
-//   title: "tixapp",
-//   description: "nextjs ticket booking app",
-// };
+import { Navbar } from "../components/Navbar";
 
 export default function RootLayout({
   children,
@@ -16,13 +7,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-background text-brightmode">
+    <html lang="en" className="bg-primary text-primary-foreground">
       <head>
         <link rel="icon" href="/static/images/logo.ico" />
         <title>TixApp</title>
       </head>
       <Navbar />
-      <div className="p-5">{children}</div>
+      <div className="p-5 bg-primary text-primary-foreground">{children}</div>
     </html>
   );
 }
