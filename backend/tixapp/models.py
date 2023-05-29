@@ -2,9 +2,16 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
+    name = models.CharField()
     email = models.EmailField(unique=True)
-    city = models.CharField(max_length=50, default="No City")
-    name = models.CharField(max_length=50, default="Anonymous")
+    password = models.CharField()
+    city = models.CharField()
+    username = None
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+    
+
 
 class Venue(models.Model):
     name = models.CharField(max_length=200)
@@ -39,3 +46,6 @@ class Show(models.Model):
 class Ticket(models.Model):
     show = models.ForeignKey(Show, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user
