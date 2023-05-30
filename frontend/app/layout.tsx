@@ -12,8 +12,10 @@ export default function RootLayout({
         <link rel="icon" href="/static/images/logo.ico" />
         <title>TixApp</title>
       </head>
-      <Navbar />
-      <div className="p-5">{children}</div>
+      <body>
+        <Navbar />
+        <div className="p-10">{children}</div>
+      </body>
     </html>
   );
 }
